@@ -14,6 +14,7 @@ joblib==1.4.2
 jsonschema==4.23.0
 jsonschema-specifications==2024.10.1
 MarkupSafe==3.0.2
+maturin==1.8.3
 narwhals==1.35.0
 nltk==3.9.1
 numpy==2.2.5
@@ -44,7 +45,6 @@ tqdm==4.67.1
 typing_extensions==4.13.2
 tzdata==2025.2
 underthesea==6.8.4
-underthesea_core==1.0.4
+underthesea_core==1.0.3
 urllib3==2.4.0
 watchdog==6.0.0
-maturin
