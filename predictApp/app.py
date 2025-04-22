@@ -1,4 +1,5 @@
 import streamlit as st
+import sys
 
 st.set_page_config(
     page_title="Predicting Customer Emotions From Product Reviews",
@@ -53,5 +54,5 @@ with col2:
     if st.button("📄 Dự đoán cảm xúc từ file CSV"):
         st.switch_page("pages/2_Labeling_data.py")
 
-
+st.write(f"Python version: {sys.version}")
 st.markdown('</div>', unsafe_allow_html=True)
