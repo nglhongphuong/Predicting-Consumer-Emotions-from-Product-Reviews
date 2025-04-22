@@ -9,7 +9,7 @@ st.set_page_config(
 st.markdown("""
     <style>
         .title { text-align: center; font-size: 40px; font-weight: bold; color: #ff6347; margin-bottom: 10px; }
-        .subtitle { text-align: center; font-size: 22px; color: #444; margin-bottom: 40px; }
+        .subtitle { text-align: center; font-size: 22px; color: white; margin-bottom: 40px; }
         .section { background-color: #f9f9f9; padding: 30px; border-radius: 12px;
                    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); margin: 0 auto; max-width: 900px; }
     </style>
@@ -40,5 +40,18 @@ st.markdown("""
 - 📂 **Mã nguồn**: [GitHub Repository](https://github.com/nglhongphuong/Predicting-Consumer-Emotions-from-Product-Reviews)
 - 📅 **Phiên bản**: 1.0 | 🕓 Ngày tạo: Tháng 4/2025
 """)
+
+# Nút điều hướng đến các trang chính
+st.markdown('<div class="button-container">', unsafe_allow_html=True)
+col1, col2 = st.columns(2)
+
+with col1:
+    if st.button("📝 Dự đoán cảm xúc từ một bình luận"):
+        st.switch_page("pages/1_Customer_Emotion_Predictor.py")
+
+with col2:
+    if st.button("📄 Dự đoán cảm xúc từ file CSV"):
+        st.switch_page("pages/2_Labeling_data.py")
+
 
 st.markdown('</div>', unsafe_allow_html=True)
