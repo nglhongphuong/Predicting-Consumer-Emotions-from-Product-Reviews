@@ -44,7 +44,7 @@ tornado==6.4.2
 tqdm==4.67.1
 typing_extensions==4.13.2
 tzdata==2025.2
-underthesea==6.8.4
+underthesea==6.8.3
 underthesea_core==1.0.3
 urllib3==2.4.0
 watchdog==6.0.0
