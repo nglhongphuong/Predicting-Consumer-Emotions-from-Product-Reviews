@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 import re
+import os
 from underthesea import word_tokenize, text_normalize
 
 # ===== Thiết lập giao diện =====
@@ -17,8 +18,11 @@ Sau đó, hệ thống sẽ:
 """)
 
 # ===== Load model và vectorizer đã huấn luyện ở Page 1 =====
-model = joblib.load("sentiment_model.pkl")
-vectorizer = joblib.load("count_vectorizer.pkl")
+if os.path.exists("sentiment_model.pkl"):
+    model = joblib.load("sentiment_model.pkl")
+    vectorizer = joblib.load("count_vectorizer.pkl")
+else:
+    st.error("Model chưa được tạo. Vui lòng chạy trang page_1 để huấn luyện trước.")
 
 # ===== Bộ lọc & xử lý văn bản =====
 emoji_pattern = re.compile(
