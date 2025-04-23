@@ -1,12 +1,32 @@
 import streamlit as st
 import sys
+import joblib
+import utils.func
 
 st.set_page_config(
     page_title="Predicting Customer Emotions From Product Reviews",
     page_icon="💬",
     layout="wide"
 )
+#========== LOAD MÔ HÌNH ĐẦU TIÊN =======================
+df_balanced_2_label = utils.func.load_data()
 
+# Nếu mô hình chưa được huấn luyện và lưu, ta sẽ huấn luyện và lưu mô hình
+model_file = 'sentiment_model.pkl'
+vectorizer_file = 'count_vectorizer.pkl'
+
+# Nếu mô hình đã tồn tại, tải mô hình và vectorizer đã lưu
+try:
+    model = joblib.load(model_file)
+    vectorizer = joblib.load(vectorizer_file)
+except FileNotFoundError:
+    # Nếu chưa có mô hình, huấn luyện và lưu lại
+    model, vectorizer = utils.func.train_model(df_balanced_2_label)
+    joblib.dump(model, model_file)
+    joblib.dump(vectorizer, vectorizer_file)
+
+
+#============================================================
 st.markdown("""
     <style>
         .title { text-align: center; font-size: 40px; font-weight: bold; color: #ff6347; margin-bottom: 10px; }
