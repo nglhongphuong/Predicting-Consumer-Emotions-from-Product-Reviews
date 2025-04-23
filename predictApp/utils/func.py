@@ -5,7 +5,7 @@ from underthesea import word_tokenize, text_normalize
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
-from googletrans import Translator
+from deep_translator import GoogleTranslator
 import streamlit as st
 
 # Giao diện Streamlit
@@ -38,16 +38,11 @@ short_word_dict = {
     "hum": "hôm", "wa": "qua", "m": "mình", "mk": "mình", "bn": "bạn", "ok": "ổn"
 }
 
-translator = Translator()
 def translate_to_vietnamese(text):
     try:
-        detected_lang = translator.detect(text).lang
-        if detected_lang == "en":
-            translated = translator.translate(text, src='en', dest='vi')
-            return translated.text
-        return text
-    except:
-        return text
+        return GoogleTranslator(source='auto', target='vi').translate(text)
+    except Exception as e:
+        return text  # Nếu lỗi thì trả lại nguyên văn
 
 
 def clean_data(text):
