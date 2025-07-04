@@ -4,22 +4,22 @@
 
 ---
 
-## 📌 Overview
+## Overview
 
 **Predicting Customer Emotions From Product Reviews** is a midterm project developed in April 2025 for the Data Analytics course. The application aims to automatically classify customer emotions (Satisfied / Unsatisfied) based on their product reviews written in Vietnamese. This helps businesses improve service quality and better understand customer feedback.
 
 ---
 
-## 💡 Features
+## Features
 
-- 😄 **Emotion Classification**: Binary classification - *Satisfied* or *Unsatisfied*.
-- 🧠 **Vietnamese NLP**: Analyze customer feedback in Vietnamese using NLP techniques.
-- 📊 **Real-world Dataset**: Collected from product reviews on Tiki.vn.
-- 🌐 **Interactive Web App**: Built with Streamlit for real-time prediction.
+- **Emotion Classification**: Binary classification - *Satisfied* or *Unsatisfied*.
+- **Vietnamese NLP**: Analyze customer feedback in Vietnamese using NLP techniques.
+- **Real-world Dataset**: Collected from product reviews on Tiki.vn.
+- **Interactive Web App**: Built with Streamlit for real-time prediction.
 
 ---
 
-## 🧰 Technologies Used
+## Technologies Used
 
 - **Python 3.11.12**
 - **Logistic Regression** for machine learning (88% accuracy).
@@ -29,13 +29,13 @@
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
 You can try the deployed application here:  
 🔗 [https://predicting-constomer-emotion.streamlit.app/](https://predicting-constomer-emotion.streamlit.app/)
 
 ---
-## ⚙️ Installation
+## ⚙Installation
 
 To run this project locally, follow these steps:
 
@@ -54,7 +54,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 ---
-## 📁 Project Structure
+## Project Structure
 ```
 Your-Folder-Name/
 ├── app.py                      # Main entrypoint for Streamlit app
